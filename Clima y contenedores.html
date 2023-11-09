@@ -1,0 +1,57 @@
+<html>
+<head> 
+	<title> aplicación clima</title>
+	<META charset="utf-8"> <!-- aplicar despues de ultimo div-->
+	<link rel="stylesheet" type="text/css" href="estilos1.css">
+</head>
+<body>
+	<div id="contenedor-principal">
+	 <div id="header"> <h1> Aquí se ubica el encabezado </h1> <a href="#"> <img src="nube.jpg" > </a></div>
+	 
+	 <div id="contenido"> <h2> Sección del clima </h2>
+	 <center>
+<marquee direction="left" behavior="scroll" scrollamount="3"> Revisa tu clima diariamente </marquee> <br>
+<label for="clima"> Seleccione el clima de hoy: </label>
+
+<select id="clima">
+	<option value=""> --Haga una selección -- </option>
+	<option value="soleado"> <h1> Soleado </h1> </option>
+	<option value="lluvioso"> Lluvioso </option>
+	<option value="nublado"> Nublado </option>
+</select>
+<p>
+
+</center>
+
+<script>
+
+var seleccionar = document.querySelector('Select');
+var parrafo = document.querySelector('p');
+
+seleccionar.addEventListener('change',establecerClima);
+
+function establecerClima(){
+	var eleccion = seleccionar.value;
+	
+	if (eleccion == 'soleado'){
+		parrafo.textContent = 'El dia esta agradable y soleado hoy, puedes usar shorts';
+	} else if (eleccion == 'lluvioso'){
+		parrafo.textContent = 'HOla esta lloviendo !! usa impermeable';
+	} else if (eleccion == 'nublado'){
+		parrafo.textContent = 'Hola el cielo esta grisaseo, refrescará';
+	}else {
+		parrafo.textContent = '';
+	}
+	
+}
+
+
+</script>
+	
+	</div>
+	
+	<div id="footer">  links de navegación </div>
+	</div>
+
+</body>
+</html>
